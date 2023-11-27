@@ -1,0 +1,25 @@
+version: "3"
+
+tasks:
+  default:
+    desc: 使用可能なタスクを一覧表示
+    cmds:
+      - task --list --sort none
+    silent: true
+
+  new-article:
+    desc: 新しい記事を作成
+    cmds:
+      - npx zenn new:article {{.CLI_ARGS}}
+    silent: true
+
+  list-articles:
+    desc: 記事一覧を表示
+    cmds:
+      - npx zenn list:articles {{.CLI_ARGS}}
+    silent: true
+
+  preview:
+    desc: 投稿をプレビュー
+    cmds:
+      - npx zenn preview {{.CLI_ARGS}}
