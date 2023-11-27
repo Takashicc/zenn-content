@@ -1,0 +1,12 @@
+{
+  "config": {
+    "line-length": false,
+    "no-duplicate-heading": false,
+    "no-inline-html": false,
+    "commands-show-output": false,
+    "ul-indent": {
+      "indent": 4
+    }
+  },
+  "ignores": [".github", ".idea", "node_modules"]
+}

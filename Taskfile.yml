@@ -1,11 +1,38 @@
 version: "3"
 
+vars:
+  LINT_TARGETS: "./articles/*.md ./books/*.md"
+
 tasks:
   default:
     desc: 使用可能なタスクを一覧表示
     cmds:
       - task --list --sort none
     silent: true
+
+  la:
+    desc: Lint all
+    cmds:
+      - task textlint || true
+      - task mdlint || true
+      - task splint || true
+
+  textlint:
+    desc: textlint
+    cmds:
+      - npx textlint {{.LINT_TARGETS}} {{.CLI_ARGS}}
+    silent: true
+
+  mdlint:
+    desc: markdown lint
+    cmds:
+      - npx markdownlint-cli2 {{.LINT_TARGETS}} {{.CLI_ARGS}}
+    silent: true
+
+  splint:
+    desc: cspell lint
+    cmds:
+      - npx cspell {{.LINT_TARGETS}} --no-progress --show-suggestions --show-context {{.CLI_ARGS}}
 
   new-article:
     desc: 新しい記事を作成
