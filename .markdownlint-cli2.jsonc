@@ -4,6 +4,8 @@
     "no-duplicate-heading": false,
     "no-inline-html": false,
     "commands-show-output": false,
+    "single-h1": false,
+    "no-alt-text": false,
     "ul-indent": {
       "indent": 4
     }
