@@ -1,6 +1,6 @@
 {
   "name": "zenn-content",
-  "dependencies": {
+  "devDependencies": {
     "cspell": "^8.0.0",
     "markdownlint-cli2": "^0.10.0",
     "textlint": "^13.4.0",
