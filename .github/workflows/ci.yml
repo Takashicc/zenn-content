@@ -8,6 +8,9 @@ on:
       - opened
       - synchronize
 
+env:
+  LINT_TARGETS: ./articles/*.md ./books/*.md
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -15,17 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: arduino/setup-task@v2
-
-      - uses: actions/setup-node@v4
+      - uses: tsuyoshicho/action-textlint@v3
         with:
-          node-version-file: package.json
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          textlint_flags: ${{ env.LINT_TARGETS }}
 
-      - name: textlint
-        run: task textlint
+      - uses: DavidAnson/markdownlint-cli2-action@v16
+        with:
+          config: .markdownlint-cli2.jsonc
+          globs: ${{ env.LINT_TARGETS }}
 
-      - name: markdownlint
-        run: task mdlint
-
-      - name: cspell lint
-        run: task splint
+      - uses: streetsidesoftware/cspell-action@v6
+        with:
+          config: ./cspell.yml
+          files: ${{ env.LINT_TARGETS }}
