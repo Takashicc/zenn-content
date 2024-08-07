@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
-      - uses: tsuyoshicho/action-textlint@c5e0d2fc28221fc9e3b95568e2e5f142aa08a72e # v3
+      - uses: tsuyoshicho/action-textlint@f59453ea4a0f3785c6d75823cdfc086f6c5a650c # v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           textlint_flags: ${{ env.LINT_TARGETS }}
