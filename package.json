@@ -1,7 +1,7 @@
 {
   "name": "zenn-content",
   "devDependencies": {
-    "cspell": "^8.0.0",
+    "cspell": "^9.0.0",
     "markdownlint-cli2": "^0.17.0",
     "textlint": "^14.0.0",
     "textlint-filter-rule-allowlist": "^4.0.0",
