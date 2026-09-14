@@ -28,7 +28,7 @@ jobs:
           config: .markdownlint-cli2.jsonc
           globs: ${{ env.LINT_TARGETS }}
 
-      - uses: streetsidesoftware/cspell-action@e0668cf020899e887ee8ad4d173c31738a79eae8 # v9
+      - uses: streetsidesoftware/cspell-action@6f3c77c1406bc930f944ba97e9801a22e42caf58 # v9
         with:
           config: ./cspell.yml
           files: ${{ env.LINT_TARGETS }}
